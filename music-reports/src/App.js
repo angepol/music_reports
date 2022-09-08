@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Form from "./Form";
+import TableData from "./TableData";
 import Home from "./Home";
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/table-data" element={<TableData />} />
       </Routes>
     </Router>
   );
