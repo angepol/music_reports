@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import VSpacer from "./VSpacer";
 import "./TableData.css";
 import { Card, Input } from "semantic-ui-react";
+import VSpacer from "./VSpacer";
 
 function TableData() {
   const navigate = useNavigate();
@@ -47,41 +47,45 @@ function TableData() {
     <div className="pageWrapper">
       <Input
         className="searchBar"
-        label="Search"
+        label="Search Products"
         icon="search"
         placeholder="Search..."
         onChange={(e) => searchItems(e.target.value)}
       />
-      <Card.Group itemsPerRow={4} style={{ marginTop: 20 }}>
-        {searchInput.length > 1
-          ? filteredResults.map((item) => {
-              return (
-                <Card>
-                  <Card.Content>
-                    <Card.Header>Title: {item.title}</Card.Header>
-                    <Card.Description>Price: {item.price}</Card.Description>
-                    <Card.Description>id: {item.id}</Card.Description>
-                    <Card.Description>stock: {item.stock}</Card.Description>
-                  </Card.Content>
-                </Card>
-              );
-            })
-          : data.map((item) => {
-              return (
-                <Card>
-                  <Card.Content>
-                    <Card.Header>Title: {item.title}</Card.Header>
-                    <Card.Description>Price: {item.price}</Card.Description>
-                    <Card.Description>id: {item.id}</Card.Description>
-                    <Card.Description>stock: {item.stock}</Card.Description>
-                  </Card.Content>
-                </Card>
-              );
-            })}
-        <button className="button" onClick={() => navigate("/")}>
-          home
-        </button>
-      </Card.Group>
+      <div className="data">
+        <Card.Group itemsPerRow={4} style={{ marginTop: 20 }}>
+          {searchInput.length > 1
+            ? filteredResults.map((item) => {
+                return (
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Title: {item.title}</Card.Header>
+                      <Card.Description>Price: {item.price}</Card.Description>
+                      <Card.Description>id: {item.id}</Card.Description>
+                      <Card.Description>stock: {item.stock}</Card.Description>
+                    </Card.Content>
+                  </Card>
+                );
+              })
+            : data.map((item) => {
+                return (
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Title: {item.title}</Card.Header>
+                      <Card.Description>Price: {item.price}</Card.Description>
+                      <Card.Description>id: {item.id}</Card.Description>
+                      <Card.Description>stock: {item.stock}</Card.Description>
+                    </Card.Content>
+                  </Card>
+                );
+              })}
+          <VSpacer factor={2} />
+          <button className="button" onClick={() => navigate("/")}>
+            products page 2
+          </button>
+          <VSpacer factor={2} />
+        </Card.Group>
+      </div>
     </div>
   );
 }
