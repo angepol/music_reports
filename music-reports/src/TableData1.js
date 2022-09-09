@@ -44,6 +44,7 @@ function TableData1() {
 
   return (
     <div className="pageWrapper">
+      <VSpacer factor={3} />
       <input
         className="searchBar"
         icon="search"
