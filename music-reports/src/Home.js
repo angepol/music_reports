@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import "./TableData.css";
 import "./TableData.css";
@@ -49,11 +48,11 @@ function Home() {
     <div className="pageWrapper">
       <input
         className="searchBar"
-        label="Search Products"
         icon="search"
         placeholder="Search..."
         onChange={(e) => searchItems(e.target.value)}
       />
+      <VSpacer factor={3} />
 
       <div className="data">
         {searchInput.length > 1
@@ -81,10 +80,13 @@ function Home() {
                 </tbody>
               );
             })}
+
         <VSpacer factor={3} />
         <button className="button" onClick={() => navigate("/products-page-2")}>
           products page 1
         </button>
+
+        <VSpacer />
       </div>
     </div>
   );
