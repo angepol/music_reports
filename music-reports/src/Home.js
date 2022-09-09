@@ -84,8 +84,11 @@ function Home() {
                 );
               })}
           <VSpacer factor={2} />
-          <button className="button" onClick={() => navigate("/table-data")}>
-            products page 1
+          <button
+            className="button"
+            onClick={() => navigate("/products-page-2")}
+          >
+            products page 2
           </button>
           <VSpacer factor={2} />
         </Card.Group>
