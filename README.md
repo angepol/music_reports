@@ -49,11 +49,12 @@ Step 6:
 Using context maintain the filters on each page when navigating back and forth.
 
 I ran out of time for step 6 - 
-I plan to make Global storage using the context api, in order for the filtered search results to persist even as the browser closes and as a user navigates between pages.
-
+I plan to make Global storage using the context API, in order for the filtered search results to persist as a user navigates between pages aor closes and reopen the browser.
 
 Step 7:
 Post your code on your github. 
 
 
+Thank you for reading!
 
+Angeline
