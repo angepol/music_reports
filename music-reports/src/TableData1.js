@@ -57,10 +57,10 @@ function Home() {
               return (
                 <tbody>
                   <tr>
-                    <th>id: {item.id}</th>
-                    <th>Title: {item.title} </th>
-                    <th>price: {item.price}</th>
-                    <th>stock: {item.stock}</th>
+                    <td>Title: {item.title} </td>
+                    <td>id: {item.id}</td>
+                    <td>price: {item.price}</td>
+                    <td>stock: {item.stock}</td>
                   </tr>
                 </tbody>
               );
@@ -69,10 +69,10 @@ function Home() {
               return (
                 <tbody>
                   <tr>
-                    <th>id: {item.id}</th>
-                    <th>Title: {item.title} </th>
-                    <th>price: {item.price}</th>
-                    <th>stock: {item.stock}</th>
+                    <td>Title: {item.title} </td>
+                    <td>id: {item.id}</td>
+                    <td>price: {item.price}</td>
+                    <td>stock: {item.stock}</td>
                   </tr>
                 </tbody>
               );
