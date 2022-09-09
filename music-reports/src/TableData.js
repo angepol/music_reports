@@ -45,7 +45,7 @@ function TableData() {
 
   return (
     <div className="pageWrapper">
-      <Input
+      <input
         className="searchBar"
         label="Search Products"
         icon="search"

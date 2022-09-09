@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import "./TableData.css";
-import { Card, Input } from "semantic-ui-react";
 import "./TableData.css";
 import VSpacer from "./VSpacer";
 
@@ -48,7 +47,7 @@ function Home() {
 
   return (
     <div className="pageWrapper">
-      <Input
+      <input
         className="searchBar"
         label="Search Products"
         icon="search"
@@ -57,41 +56,35 @@ function Home() {
       />
 
       <div className="data">
-        <Card.Group itemsPerRow={4} style={{ marginTop: 20 }}>
-          {searchInput.length > 1
-            ? filteredResults.map((item) => {
-                return (
-                  <Card>
-                    <Card.Content>
-                      <Card.Header>Title: {item.title}</Card.Header>
-                      <Card.Description>: {item.price}</Card.Description>
-                      <Card.Description>id: {item.id}</Card.Description>
-                      <Card.Description>stock: {item.stock}</Card.Description>
-                    </Card.Content>
-                  </Card>
-                );
-              })
-            : data.map((item) => {
-                return (
-                  <Card>
-                    <Card.Content>
-                      <Card.Header>Title: {item.title}</Card.Header>
-                      <Card.Description>Price: {item.price}</Card.Description>
-                      <Card.Description>id: {item.id}</Card.Description>
-                      <Card.Description>stock: {item.stock}</Card.Description>
-                    </Card.Content>
-                  </Card>
-                );
-              })}
-          <VSpacer factor={2} />
-          <button
-            className="button"
-            onClick={() => navigate("/products-page-2")}
-          >
-            products page 2
-          </button>
-          <VSpacer factor={2} />
-        </Card.Group>
+        {searchInput.length > 1
+          ? filteredResults.map((item) => {
+              return (
+                <tbody>
+                  <tr>
+                    <th>id: {item.id}</th>
+                    <th>Title: {item.title} </th>
+                    <th>price: {item.price}</th>
+                    <th>stock: {item.stock}</th>
+                  </tr>
+                </tbody>
+              );
+            })
+          : data.map((item) => {
+              return (
+                <tbody>
+                  <tr>
+                    <th>id: {item.id}</th>
+                    <th>Title: {item.title} </th>
+                    <th>price: {item.price}</th>
+                    <th>stock: {item.stock}</th>
+                  </tr>
+                </tbody>
+              );
+            })}
+        <VSpacer factor={3} />
+        <button className="button" onClick={() => navigate("/products-page-2")}>
+          products page 1
+        </button>
       </div>
     </div>
   );
