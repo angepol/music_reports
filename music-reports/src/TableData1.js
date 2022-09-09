@@ -1,12 +1,10 @@
+import "./TableData.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./TableData.css";
-import "./TableData.css";
 import VSpacer from "./VSpacer";
 
 function Home() {
   const navigate = useNavigate();
-
   const [data, setData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -53,7 +51,6 @@ function Home() {
         onChange={(e) => searchItems(e.target.value)}
       />
       <VSpacer factor={3} />
-
       <div className="data">
         {searchInput.length > 1
           ? filteredResults.map((item) => {
@@ -83,9 +80,8 @@ function Home() {
 
         <VSpacer factor={3} />
         <button className="button" onClick={() => navigate("/products-page-2")}>
-          products page 1
+          products page 2
         </button>
-
         <VSpacer />
       </div>
     </div>

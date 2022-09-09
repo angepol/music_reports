@@ -5,7 +5,6 @@ import VSpacer from "./VSpacer";
 
 function TableData() {
   const navigate = useNavigate();
-
   const [data, setData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -51,7 +50,7 @@ function TableData() {
         placeholder="Search..."
         onChange={(e) => searchItems(e.target.value)}
       />
-
+      <VSpacer factor={3} />
       <div className="data">
         {searchInput.length > 1
           ? filteredResults.map((item) => {
@@ -80,8 +79,9 @@ function TableData() {
             })}
         <VSpacer factor={3} />
         <button className="button" onClick={() => navigate("/")}>
-          products page 2
+          products page 1
         </button>
+        <VSpacer />
       </div>
     </div>
   );
