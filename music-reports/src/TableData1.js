@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import VSpacer from "./VSpacer";
 
-function Home() {
+function TableData1() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
@@ -51,7 +51,7 @@ function Home() {
         onChange={(e) => searchItems(e.target.value)}
       />
       <VSpacer factor={3} />
-      <div className="data">
+      <div className="table">
         {searchInput.length > 1
           ? filteredResults.map((item) => {
               return (
@@ -88,4 +88,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default TableData1;

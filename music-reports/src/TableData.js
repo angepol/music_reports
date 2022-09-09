@@ -43,6 +43,7 @@ function TableData() {
 
   return (
     <div className="pageWrapper">
+      <VSpacer factor={3} />
       <input
         className="searchBar"
         label="Search Products"
@@ -51,7 +52,7 @@ function TableData() {
         onChange={(e) => searchItems(e.target.value)}
       />
       <VSpacer factor={3} />
-      <div className="data">
+      <div className="table">
         {searchInput.length > 1
           ? filteredResults.map((item) => {
               return (
