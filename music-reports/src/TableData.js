@@ -15,13 +15,15 @@ function TableData() {
   const [searchInput, setSearchInput] = useState("");
 
   const fetchData = () => {
-    fetch(`https://dummyjson.com/products`)
-      .then((response) => response.json())
-      .then((actualData) => {
-        console.log(actualData);
-        setData(actualData.products);
+    fetch(`https://dummyjson.com/products`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data.products);
         console.log(data);
       })
+
       .catch((err) => {
         console.log(err.message);
       });
@@ -59,7 +61,7 @@ function TableData() {
         />
         <VSpacer factor={3} />
         <div className="table">
-          {searchInput.length > 1
+          {searchInput !== ""
             ? filteredResults.map((item) => {
                 return (
                   <tbody>
