@@ -11,7 +11,6 @@ function TableData() {
 
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  // const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   const fetchData = () => {
