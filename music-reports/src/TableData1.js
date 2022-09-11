@@ -1,14 +1,18 @@
 import "./TableData.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import VSpacer from "./VSpacer";
+import { MyContext } from "./Context";
 
 function TableData1() {
+  const [filteredResults, setFilteredResults] = useContext(MyContext);
+
+  console.log(useContext(filteredResults));
+
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [filteredResults, setFilteredResults] = useState([]);
+  // const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
   const fetchData = () => {
     fetch(`https://dummyjson.com/products
     `)
@@ -22,11 +26,9 @@ function TableData1() {
         console.log(err.message);
       });
   };
-
   useEffect(() => {
     fetchData();
   }, []);
-
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchInput !== "") {
@@ -43,50 +45,53 @@ function TableData1() {
   };
 
   return (
-    <div className="pageWrapper">
-      <VSpacer factor={3} />
-      <input
-        className="searchBar"
-        icon="search"
-        placeholder="Search..."
-        onChange={(e) => searchItems(e.target.value)}
-      />
-      <VSpacer factor={3} />
-      <div className="table">
-        {searchInput.length > 1
-          ? filteredResults.map((item) => {
-              return (
-                <tbody>
-                  <tr>
-                    <td>Title: {item.title} </td>
-                    <td>id: {item.id}</td>
-                    <td>price: {item.price}</td>
-                    <td>stock: {item.stock}</td>
-                  </tr>
-                </tbody>
-              );
-            })
-          : data.map((item) => {
-              return (
-                <tbody>
-                  <tr>
-                    <td>Title: {item.title} </td>
-                    <td>id: {item.id}</td>
-                    <td>price: {item.price}</td>
-                    <td>stock: {item.stock}</td>
-                  </tr>
-                </tbody>
-              );
-            })}
-
+    <MyContext.Provider value={[filteredResults, setFilteredResults]}>
+      <div className="pageWrapper">
         <VSpacer factor={3} />
-        <button className="button" onClick={() => navigate("/products-page-2")}>
-          products page 2
-        </button>
-        <VSpacer />
+        <input
+          className="searchBar"
+          icon="search"
+          placeholder="Search..."
+          onChange={(e) => searchItems(e.target.value)}
+        />
+        <VSpacer factor={3} />
+        <div className="table">
+          {searchInput.length > 1
+            ? filteredResults.map((item) => {
+                return (
+                  <tbody>
+                    <tr>
+                      <td>Title: {item.title} </td>
+                      <td>id: {item.id}</td>
+                      <td>price: {item.price}</td>
+                      <td>stock: {item.stock}</td>
+                    </tr>
+                  </tbody>
+                );
+              })
+            : data.map((item) => {
+                return (
+                  <tbody>
+                    <tr>
+                      <td>Title: {item.title} </td>
+                      <td>id: {item.id}</td>
+                      <td>price: {item.price}</td>
+                      <td>stock: {item.stock}</td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+          <VSpacer factor={3} />
+          <button
+            className="button"
+            onClick={() => navigate("/products-page-2")}
+          >
+            products page 2
+          </button>
+          <VSpacer />
+        </div>
       </div>
-    </div>
+    </MyContext.Provider>
   );
 }
-
 export default TableData1;

@@ -7,7 +7,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<TableData1 />} />
         <Route path="/products-page-2" element={<TableData />} />
       </Routes>
