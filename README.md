@@ -44,10 +44,13 @@ Here I wrote a function that checks if the search input is empty, and if so it s
 **Step 6:**
 Using context maintain the filters on each page when navigating back and forth.
 This step is a WIP - aim is for the `searchValue`to persist while navigating between pages.
+
 In my most recent comment I have updated my implementation to more closely match react documentation. I haven't cracked it just yet. But i'll get there! :)
 
 **Step 7:**
 Post your code on your github.
+
+Here it is :)
 
 Thank you for reading!
 
