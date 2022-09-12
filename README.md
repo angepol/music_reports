@@ -1,8 +1,12 @@
 # music_reports
 
-> Filter search
+> Filter Search App
 
-![Screen Shot 2022-09-09 at 4 05 45 PM](https://user-images.githubusercontent.com/50424620/189456958-b0d2fc41-23f5-4f1f-a8d9-995184499db2.png)
+![Screen Shot 2022-09-11 at 5 23 50 PM](https://user-images.githubusercontent.com/50424620/189556055-34ad1c35-16aa-4414-8412-235117d8b73f.png)
+
+> Search for you favorite products
+
+![Screen Shot 2022-09-11 at 5 23 38 PM](https://user-images.githubusercontent.com/50424620/189556059-186d0be9-c11e-4d9e-8846-146bc6c27df7.png)
 
 steps to run project locally
 
