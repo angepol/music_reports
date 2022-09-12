@@ -1,16 +1,9 @@
 .pageWrapper {
-  position: absolute;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(29, 29, 34);
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
-  );
-  min-height: 100%;
   width: 100%;
 }
 
@@ -30,30 +23,7 @@ td {
   padding-left: 20px;
 }
 
-.data {
-  padding-top: 60px;
-}
-
-.button {
-  align-items: center;
-  background-color: white;
-  border-radius: 20px;
-  color: rgba(63, 94, 251, 1);
-  cursor: pointer;
-  display: flex;
-  font-size: 20px;
-  font-style: bold;
-  font-weight: 800;
-  justify-content: center;
-  line-height: 40px;
-  margin: auto;
-  text-align: center;
-  text-shadow: 1px 1px 2px gold;
-  width: 30vw;
-}
-
-.button:hover {
-  background-color: white;
-  color: rgba(252, 70, 107, 1);
-  text-shadow: 1px 1px 2px white;
+.table {
+  padding-top: 20px;
+  /* margin: auto; */
 }

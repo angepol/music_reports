@@ -1,14 +1,13 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import TableData from "./TableData";
-import TableData1 from "./TableData1";
+import SearchPageOne from "./SearchPageOne";
+import SearchPageTwo from "./SearchPageTwo";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<TableData1 />} />
-        <Route path="/products-page-2" element={<TableData />} />
+        <Route path="/" element={<SearchPageOne />} />
+        <Route path="/search-page-two" element={<SearchPageTwo />} />
       </Routes>
     </Router>
   );

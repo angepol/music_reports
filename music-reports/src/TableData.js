@@ -1,6 +1,5 @@
 import "./TableData.css";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import VSpacer from "./VSpacer";
 import { MyContext } from "./Context";
 
@@ -9,7 +8,6 @@ function TableData() {
 
   console.log(useContext(filteredResults));
 
-  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
@@ -85,11 +83,6 @@ function TableData() {
                   </tbody>
                 );
               })}
-          <VSpacer factor={3} />
-          <button className="button" onClick={() => navigate("/")}>
-            products page 1
-          </button>
-          <VSpacer />
         </div>
       </div>
     </MyContext.Provider>
