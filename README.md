@@ -10,7 +10,7 @@
 
 steps to run project locally
 
-1. git clone!
+1. git clone
 2. npm i
 3. npm start
 
