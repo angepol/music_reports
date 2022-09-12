@@ -24,12 +24,11 @@ Here I used create-react-app
 **Step 2:**
 Create 2 pages using hooks to navigate between them
 
-Here I used React Router v6 with, I navigating between pages with useNavaigate();
+Here I used React Router v6 navigating between pages with useNavaigate();
 
 **Step 3:**
 Add a form with at least one input and a table to each page
-
-I have added a search input to each page
+In this Application, I defined a component called TableData this contains a search input and a table of data. This component is rendered in two seperate pages. `SearchPageOne` and `searchPageTwo`.
 
 **Step 4:**
 Add data to the tables using an ajax call. If you have an existing dataset you can use it.
