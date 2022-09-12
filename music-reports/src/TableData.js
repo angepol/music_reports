@@ -14,6 +14,7 @@ function TableData() {
   const fetchData = () => {
     fetch(`https://dummyjson.com/products`, {
       method: "GET",
+      headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
       .then((data) => {
