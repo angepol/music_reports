@@ -1,12 +1,13 @@
 import "./TableData.css";
+import { MyContext } from "./Context";
 import { useContext, useEffect, useState } from "react";
 import VSpacer from "./VSpacer";
-import { MyContext } from "./Context";
 
 function TableData() {
-  const [filteredResults, setFilteredResults] = useContext(MyContext);
+  const searchValue = useContext(MyContext);
+  const [filteredResults, setFilteredResults] = useState([]);
 
-  console.log(useContext(filteredResults));
+  console.log(useContext(searchValue));
 
   const [data, setData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -47,46 +48,44 @@ function TableData() {
   };
 
   return (
-    <MyContext.Provider value={[filteredResults, setFilteredResults]}>
-      <div className="pageWrapper">
-        <VSpacer factor={3} />
-        <input
-          className="searchBar"
-          label="Search Products"
-          icon="search"
-          placeholder="Search..."
-          onChange={(e) => searchItems(e.target.value)}
-        />
-        <VSpacer factor={3} />
-        <div className="table">
-          {searchInput !== ""
-            ? filteredResults.map((item) => {
-                return (
-                  <tbody>
-                    <tr>
-                      <td>Title: {item.title} </td>
-                      <td>id: {item.id}</td>
-                      <td>price: {item.price}</td>
-                      <td>stock: {item.stock}</td>
-                    </tr>
-                  </tbody>
-                );
-              })
-            : data.map((item) => {
-                return (
-                  <tbody>
-                    <tr>
-                      <td>Title: {item.title} </td>
-                      <td>id: {item.id}</td>
-                      <td>price: {item.price}</td>
-                      <td>stock: {item.stock}</td>
-                    </tr>
-                  </tbody>
-                );
-              })}
-        </div>
+    <div className="pageWrapper">
+      <VSpacer factor={3} />
+      <input
+        className="searchBar"
+        label="Search Products"
+        icon="search"
+        placeholder="Search..."
+        onChange={(e) => searchItems(e.target.value)}
+      />
+      <VSpacer factor={3} />
+      <div className="table">
+        {searchInput !== ""
+          ? filteredResults.map((item) => {
+              return (
+                <tbody>
+                  <tr>
+                    <td>Title: {item.title} </td>
+                    <td>id: {item.id}</td>
+                    <td>price: {item.price}</td>
+                    <td>stock: {item.stock}</td>
+                  </tr>
+                </tbody>
+              );
+            })
+          : data.map((item) => {
+              return (
+                <tbody>
+                  <tr>
+                    <td>Title: {item.title} </td>
+                    <td>id: {item.id}</td>
+                    <td>price: {item.price}</td>
+                    <td>stock: {item.stock}</td>
+                  </tr>
+                </tbody>
+              );
+            })}
       </div>
-    </MyContext.Provider>
+    </div>
   );
 }
 
